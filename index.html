@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #4b5651;
+        }
+        .container {
+            text-align: center;
+            background-color: rgb(244, 245, 244);
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #333;
+            margin-bottom: 1em;
+            transition: all .3s ease-in-out;
+        }
+        .profile-pic:hover {
+            transform: scale(1.2);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .fact-box {
+            background-color: #e9ecef;
+            padding: 1em;
+            border-radius: 5px;
+            margin-top: 1.5em;
+            min-height: 4em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75em 1.5em;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 1em;
+            transition: background-color 0.3s ease;
+            transition: all .3s ease-in-out;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="linkedinpfp.jpeg" class="profile-pic">
+    
+    <h1>Krish Visram</h1>
+    
+    <p>
+        Krish is a first year CS major who enjoys volunteering in his community. In the past, he has tutored math to 
+        elementary and middle school students in order to raise money for a 9/11 memorial in his hometown of Chesterfield, NJ.
+    </p>
+
+    <div class="fact-box" id="fact-display">
+        Click the button below to learn a random fact about me!
+    </div>
+    
+    <button id="fact-button">Click for a new fact about Krish</button>
+</div>
+
+<script>
+    const facts = [
+        "I have traveled to over 15 countries",
+        "My favorite food is ramen",
+        "I love hiking in the mountains",
+        "My favorite color is green",
+        "I love to go off-roading",
+        "I am learning how to snowboard"
+    ];
+
+    const factButton = document.getElementById('fact-button');
+    const factDisplay = document.getElementById('fact-display');
+
+    factButton.addEventListener('click', () => {
+        const randomIndex = Math.floor(Math.random() * facts.length);
+        factDisplay.textContent = facts[randomIndex];
+    });
+</script>
+
+</body>
+</html>
